@@ -16,11 +16,19 @@ Route::get('/', function () {
    // return view('welcome');
 });
 
-Route::get('/about', function () {
-	$response_arr = [];
-	$response_arr['author'] = 'BP';
-	$response_arr['version'] = '0.1.1';
-	return $response_arr;
+Route::get('/di', 'ClientController@di');
+
+Route::get('/Facades/db', function () {
+
+	return DB::select('select * from table');
 });
 
-Route::get('/di', 'ClientController@di');
+Route::get('/Facades/encrypt', function () {
+
+	return Crypt::encrypt('123456789');
+});
+
+Route::get('/Facades/decrypt', function () {
+
+	return Crypt::decrypt('eyJpdiI6InVKOURnQXYrZEwyVGM1VzFkZU44Qnc9PSIsInZhbHVlIjoidzFFUUVOandDU0wwMEFjUjIzOFJQV2ErUlNZa2tlUEg4Q1RGUGpDUHJwRT0iLCJtYWMiOiIwYzkyM2RlMDY0YjI1Yjk2NGFhNmM0Zjc4Nzc4OGI3ZjU1MGM4MGMxZDU1NWU2NDM4ZDBiOGQwZjk5MjMyMzljIn0=');
+});
