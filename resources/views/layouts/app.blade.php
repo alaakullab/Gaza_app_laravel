@@ -2,7 +2,7 @@
 <html data-whatinput="keyboard" data-whatintent="keyboard" class=" whatinput-types-initial whatinput-types-keyboard"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
-        <title>Landon Hotel App</title>
+        <title>Gaza Hotel App</title>
             <link rel="icon" type="image/x-icon" href="favicon.ico" />
             <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
