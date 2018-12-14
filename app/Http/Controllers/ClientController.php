@@ -20,22 +20,64 @@ class ClientController extends Controller
     
     public function index()
     {
-    	return view('client/index');
+
+    	   $data = [];
+
+        $obj = new \stdClass;
+        $obj->id = 1;
+        $obj->title = 'mr';
+        $obj->name = 'john';
+        $obj->last_name = 'doe';
+        $obj->email = 'john@domain.com';
+        $data['clients'][] = $obj;
+    
+        $obj = new \stdClass;
+        $obj->id = 2;
+        $obj->title = 'ms';
+        $obj->name = 'jane';
+        $obj->last_name = 'doe';
+        $obj->email = 'jane@another-domain.com';
+        $data['clients'][] = $obj;
+        return view('client/index', $data);
     }
 
-    public function newClient()
+    public function newClient(Request $request)
     {
-    	return view('client/newClient');
+        $data = [];
+
+        $data['title']  = $request->input('title');
+        $data['name']  = $request->input('name');
+        $data['last_name']  = $request->input('lastName');   
+        $data['address']  = $request->input('address');   
+        $data['zip_code']  = $request->input('zipCode');   
+        $data['city']  = $request->input('city');   
+        $data['state']  = $request->input('state');   
+        $data['email']  = $request->input('email');   
+        
+        $data['titles'] = $this->titles;
+        $data['modify'] = 0;
+
+        if ( $request->isMethod('post') ) {
+            
+            dd($data);
+            return redire('clients');
+        }
+
+
+    	return view('client/form', $data);
     }
  
     public function create()
     {
-    	return view('client/create');
+    	 return view('client/create');
     }
 
     public function show($client_id)
     {
-    	return view('client/show');
+    	$data = [];
+        $data['titles'] = $this->titles;
+        $data['modify'] = 1;
+        return view('client/form', $data);
     }
 
 }
