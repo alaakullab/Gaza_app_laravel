@@ -63,8 +63,8 @@ class ClientController extends Controller
             $this->validate(
                 $request,
                 [
-                    'name' => 'required',
-                    'last_name' => 'required',
+                    'name' => 'required|min:5',
+                    'lastName' => 'required',
                     'address' => 'required',
                     'zip_code' => 'required',
                     'city' => 'required',

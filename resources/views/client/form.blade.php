@@ -15,31 +15,38 @@
           </div>
           <div class="medium-4  columns">
             <label>Name</label>
-            <input name="name" type="text">
+            <input name="name" type="text" value="{{ old('name') }}">
+            <small class="error">{{ $errors->first('name') }}</small>
           </div>
           <div class="medium-4  columns">
             <label>Last Name</label>
-            <input name="lastName" type="text">
+            <input name="lastName" type="text" value="{{ old('lastName') }}">
+            <small class="error">{{ $errors->first('lastName') }}</small>
           </div>
           <div class="medium-8  columns">
             <label>Address</label>
-            <input name="address" type="text">
+            <input name="address" type="text" value="{{ old('address') }}">
+            <small class="error">{{ $errors->first('address') }}</small>
           </div>
           <div class="medium-4  columns">
             <label>zip_code</label>
-            <input name="zipCode" type="text">
+            <input name="zipCode" type="text" value="{{ old('zipCode') }}">
+            <small class="error">{{ $errors->first('zipCode') }}</small>
           </div>
           <div class="medium-4  columns">
             <label>City</label>
-            <input name="city" type="text">
+            <input name="city" type="text" value="{{ old('city') }}">
+            <small class="error">{{ $errors->first('city') }}</small>
           </div>
           <div class="medium-4  columns">
             <label>State</label>
-            <input name="state" type="text">
+            <input name="state" type="text" value="{{ old('state') }}">
+            <small class="error">{{ $errors->first('state') }}</small>
           </div>
           <div class="medium-12  columns">
             <label>Email</label>
-            <input name="email" type="text">
+            <input name="email" type="text" value="{{ old('email') }}">
+            <small class="error">{{ $errors->first('email') }}</small>
           </div>
           <div class="medium-12  columns">
             <input value="SAVE" class="button success hollow" type="submit">
