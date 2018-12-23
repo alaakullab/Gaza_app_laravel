@@ -25,6 +25,10 @@ class ReservationsController extends Controller
     	$reservations->room()->associate($room);
     	$reservations->client()->associate($client);
 
+    	if ($room_instance->isRoomBooked( $room_id, $date_in, $date_out )) {
+    		abort(405, 'Trying to book an already booked room');
+    	}
+
     	$reservations->save();
 
     	return redirect()->route('clients');
