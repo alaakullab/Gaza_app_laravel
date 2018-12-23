@@ -98,14 +98,14 @@ class ClientController extends Controller
     {
         $data = [];
 
-        $data['title']  = $request->input('title');
-        $data['name']  = $request->input('name');
-        $data['last_name']  = $request->input('last_name');   
-        $data['address']  = $request->input('address');   
-        $data['zip_code']  = $request->input('zip_entry_compressedsize(zip_entry)');   
-        $data['city']  = $request->input('city');   
-        $data['state']  = $request->input('state');   
-        $data['email']  = $request->input('email');   
+        $data['title'] = $request->input('title');
+        $data['name'] = $request->input('name');
+        $data['last_name'] = $request->input('last_name');
+        $data['address'] = $request->input('address');
+        $data['zip_code'] = $request->input('zip_code');
+        $data['city'] = $request->input('city');
+        $data['state'] = $request->input('state');
+        $data['email'] = $request->input('email');  
      
         if ( $request->isMethod('post') ) {
             
@@ -129,7 +129,7 @@ class ClientController extends Controller
         $client_data->name = $request->input('name');
         $client_data->last_name = $request->input('last_name');   
         $client_data->address = $request->input('address');   
-        $client_data->zip_code = $request->input('zip_entry_compressedsize(zip_entry)');   
+        $client_data->zip_code = $request->input('zip_code');   
         $client_data->city = $request->input('city');   
         $client_data->state = $request->input('state');   
         $client_data->email = $request->input('email');  
